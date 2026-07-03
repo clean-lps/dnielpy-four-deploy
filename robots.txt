@@ -4,4 +4,4 @@ Disallow: /login
 Disallow: /dashboard
 Disallow: /admin
 
-Sitemap: https://example.com/sitemap.xml
+Sitemap: https://luisbseafood.com/sitemap.xml
