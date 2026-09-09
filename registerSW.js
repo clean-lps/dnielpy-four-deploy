@@ -1,1 +1,0 @@
-if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/dnielpy-four-deploy/sw.js', { scope: '/dnielpy-four-deploy/' })})}
