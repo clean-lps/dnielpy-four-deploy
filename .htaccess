@@ -1,8 +1,14 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
+
+  # Force HTTPS and non-www: https://frimaxllc.com is the only canonical host.
+  RewriteCond %{HTTPS} off [OR]
+  RewriteCond %{HTTP_HOST} ^www\. [NC]
+  RewriteRule ^ https://frimaxllc.com%{REQUEST_URI} [L,R=301]
+
   RewriteBase /
   RewriteRule ^index\.html$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . /index.html [L]
 </IfModule>
+
+# Unknown routes are a real 404, not a 200 SPA fallback.
+ErrorDocument 404 /404.html
